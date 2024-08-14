@@ -1,0 +1,15 @@
+{{> header}}
+
+<section>
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    {{#each faqs}}
+      <div class="faq-item">
+        <h3>Q: {{this.question}}</h3>
+        <p>A: {{this.answer}}</p>
+      </div>
+    {{/each}}
+  </div>
+</section>
+
+{{> footer}}

@@ -1,17 +1,90 @@
-<h2>Login</h2>
+{{> header}}
 
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
+<section class="login-signup">
+  <div class="form-container">
+    <h2>Login</h2>
+    <form class="login-form">
+      <div>
+        <label for="email-login">Email</label>
+        <input type="email" id="email-login" name="email" required>
+      </div>
+      <div>
+        <label for="password-login">Password</label>
+        <input type="password" id="password-login" name="password" required>
+      </div>
+      <button type="submit">Log In</button>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
 
-<script src="/js/login.js"></script>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form class="signup-form">
+      <div>
+        <label for="name-signup">Name</label>
+        <input type="text" id="name-signup" name="name" required>
+      </div>
+      <div>
+        <label for="email-signup">Email</label>
+        <input type="email" id="email-signup" name="email" required>
+      </div>
+      <div>
+        <label for="password-signup">Password</label>
+        <input type="password" id="password-signup" name="password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .login-signup {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+    width: 80%;
+  }
+
+  .form-container {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 40%;
+  }
+
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container label {
+    margin-bottom: 5px;
+  }
+
+  .form-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-container button {
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-container button:hover {
+    background-color: #3700b3;
+  }
+</style>
+
+{{> footer}}
