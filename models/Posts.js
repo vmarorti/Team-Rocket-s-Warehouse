@@ -5,12 +5,27 @@ class Posts extends Model {};
 
 Posts.init(
     {
-        id: {},
-        pokemon: {},
-        price: {},
-        condition: {},
-        likes: {},
-        created_at: {}
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        pokemon: {
+            type: DataTypes.STRING
+        },
+        price: {
+            type: DataTypes.FLOAT
+        },
+        condition: {
+            type: DataTypes.STRING
+        },
+        likes: {
+            type: DataTypes.INTEGER
+        },
+        created_at: {
+            type: DataTypes.DATE
+        }
     },
     { 
         sequelize,

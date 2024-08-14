@@ -5,11 +5,36 @@ class ForSale extends Model {};
 
 ForSale.init(
     {
-        id: {},
-        seller_id: {},
-        sold: {},
-        item_id: {},
-        buyer: {}
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        seller_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'users',
+                key: 'id'
+            }
+        },
+        sold: {
+            type: DataTypes.BOOLEAN
+        },
+        item_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'posts',
+                key: 'id'
+            }
+        },
+        buyer: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'buyer',
+                key: 'id'
+            }
+        }
     },
     { 
         sequelize,
