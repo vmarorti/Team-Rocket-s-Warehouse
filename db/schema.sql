@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 DROP DATABASE IF EXISTS card_db;
 CREATE DATABASE card_db;
 USE card_db;
@@ -10,7 +9,3 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-=======
-DROP DATABASE IF EXISTS trw_db;
-CREATE DATABASE trw_db;
->>>>>>> b51bc5765cd511af1fdbe61bf6bfe024fc232e2f
