@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
+const homeRoutes = require('./homeRoutes'); // Import the home routes
 
-router.use('/users', userRoutes);
+router.use('/', homeRoutes); // Use the home routes for the root path
 
 module.exports = router;

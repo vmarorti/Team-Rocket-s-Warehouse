@@ -1,0 +1,15 @@
+{{> header}}
+
+<section>
+  <h2>About Us</h2>
+  <div class="team">
+    {{#each team}}
+      <div class="team-member">
+        <h3>{{this.name}}</h3>
+        <p>{{this.role}}</p>
+      </div>
+    {{/each}}
+  </div>
+</section>
+
+{{> footer}}
