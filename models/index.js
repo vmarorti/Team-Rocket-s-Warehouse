@@ -1,3 +1,3 @@
-const User = require('./User');
+const User = require('./User'); // Adjust according to your actual models
 
-module.exports = { User };
+module.exports = { User }; // Export models
