@@ -4,7 +4,7 @@ const ForSale = require('./ForSale');
 const ForTrade = require('./Fortrade');
 const Posts = require('./Posts.js');
 const Trade = require('./Trade.js');
-const Trader = require('./Trader.js');
+// const Trader = require('./Trader.js');
 
 // Work on relationships
 
@@ -57,13 +57,13 @@ ForTrade.belongsTo(Trade, {
 
 // Trader Relationships
 
-Trader.hasOne(ForTrade, {
-    foreignKey: 'trade_id'
-})
+// Trader.hasOne(ForTrade, {
+//     foreignKey: 'trade_id'
+// })
 
-ForTrade.belongsTo(Trader, {
-    foreignKey: 'trade_id'
-})
+// ForTrade.belongsTo(Trader, {
+//     foreignKey: 'trade_id'
+// })
 
 // Posts Realtionships
 Posts.hasOne(Trade, {
@@ -74,13 +74,13 @@ Trade.belongsTo(Posts, {
     foreignKey: 'card_id'
 })
 
-Posts.hasOne(Trader, {
-    foreignKey: 'card_id'
-})
+// Posts.hasOne(Trader, {
+//     foreignKey: 'card_id'
+// })
 
-Trader.belongsTo(Posts, {
-    foreignKey: 'card_id'
-})
+// Trader.belongsTo(Posts, {
+//     foreignKey: 'card_id'
+// })
 
 Posts.hasOne(ForSale, {
     foreignKey: 'item_id'

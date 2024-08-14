@@ -28,13 +28,13 @@ ForTrade.init(
                 key: 'id'
             }
         },
-        trade_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'trader',
-                key: 'id'
-            }
-        },
+        // trade_id: {
+        //     type: DataTypes.STRING,
+        //     references: {
+        //         model: 'trader',
+        //         key: 'id'
+        //     }
+        // },
         buyer: {
             type: DataTypes.INTEGER,
             references: {
