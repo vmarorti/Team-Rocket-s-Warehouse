@@ -1,36 +1,36 @@
-const Users = require('./Users');
+const User = require('./User');
 const Buyer = require('./Buyer');
 const ForSale = require('./ForSale');
 const ForTrade = require('./Fortrade');
 const Posts = require('./Posts.js');
 const Trade = require('./Trade.js');
-const Trader = require('./Trader.js');
+// const Trader = require('./Trader.js');
 
 // Work on relationships
 
 // Users Relationships
 
-Users.hasMany(ForTrade, {
+User.hasMany(ForTrade, {
     foreignKey: 'seller_id'
 });
 
-ForTrade.belongsTo(Users, {
+ForTrade.belongsTo(User, {
     foreignKey: 'seller_id'
 })
 
-Users.hasMany(ForSale, {
+User.hasMany(ForSale, {
     foreignKey: 'seller_id'
 })
 
-ForSale.belongsTo(Users, {
+ForSale.belongsTo(User, {
     foreignKey: 'seller_id'
 })
 
-Users.hasOne(Buyer, {
+User.hasOne(Buyer, {
     foreignKey: 'buyer_id'
 })
 
-Buyer.belongsTo(Users, {
+Buyer.belongsTo(User, {
     foreignKey: 'buyer_id'
 })
 
@@ -57,13 +57,13 @@ ForTrade.belongsTo(Trade, {
 
 // Trader Relationships
 
-Trader.hasOne(ForTrade, {
-    foreignKey: 'trade_id'
-})
+// Trader.hasOne(ForTrade, {
+//     foreignKey: 'trade_id'
+// })
 
-ForTrade.belongsTo(Trader, {
-    foreignKey: 'trade_id'
-})
+// ForTrade.belongsTo(Trader, {
+//     foreignKey: 'trade_id'
+// })
 
 // Posts Realtionships
 Posts.hasOne(Trade, {
@@ -74,13 +74,13 @@ Trade.belongsTo(Posts, {
     foreignKey: 'card_id'
 })
 
-Posts.hasOne(Trader, {
-    foreignKey: 'card_id'
-})
+// Posts.hasOne(Trader, {
+//     foreignKey: 'card_id'
+// })
 
-Trader.belongsTo(Posts, {
-    foreignKey: 'card_id'
-})
+// Trader.belongsTo(Posts, {
+//     foreignKey: 'card_id'
+// })
 
 Posts.hasOne(ForSale, {
     foreignKey: 'item_id'
@@ -93,4 +93,4 @@ ForSale.belongsTo(Posts, {
 // ForSale Relationships
 // No relation towards PK
 
-module.exports = { Users, Buyer, ForSale, ForTrade, Posts, Trade, Trader };
+module.exports = { User, Buyer, ForSale, ForTrade, Posts, Trade, Trader };
