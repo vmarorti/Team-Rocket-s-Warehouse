@@ -28,13 +28,9 @@ ForTrade.init(
                 key: 'id'
             }
         },
-        // trade_id: {
-        //     type: DataTypes.STRING,
-        //     references: {
-        //         model: 'trader',
-        //         key: 'id'
-        //     }
-        // },
+        trade_pokemon: {
+            type: DataTypes.STRING,
+        },
         buyer: {
             type: DataTypes.INTEGER,
             references: {
