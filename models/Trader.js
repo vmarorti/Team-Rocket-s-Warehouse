@@ -5,8 +5,19 @@ class Trader extends Model {};
 
 Trader.init(
     {
-        id: {},
-        card_id: {}
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        card_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'posts',
+                key: 'id',
+            }
+        }
     },
     { 
         sequelize,
