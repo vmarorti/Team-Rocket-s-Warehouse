@@ -24,7 +24,7 @@ ForTrade.init(
         fortrade_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'trade',
+                model: 'tradecard',
                 key: 'id'
             }
         },
