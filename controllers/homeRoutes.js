@@ -3,8 +3,11 @@ const router = require('express').Router();
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
   try {
-    // Assume you have some logic to fetch data, such as cards
-    const cards = []; // Replace with actual data fetching logic
+    // join fortrade, trade and post where fortrade.buyer is null
+
+    // join forsale and posts where forsale.buyer is null
+
+    const cards = [];
 
     // Render the home page with the data
     res.render('home', {
