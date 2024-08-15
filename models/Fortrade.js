@@ -20,6 +20,7 @@ ForTrade.init(
         },
         trade: {
             type: DataTypes.BOOLEAN,
+            allowNull: true
         },
         card_id: {
             type: DataTypes.INTEGER,
