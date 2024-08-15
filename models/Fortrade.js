@@ -14,7 +14,7 @@ ForTrade.init(
         seller_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'users',
+                model: 'user',
                 key: 'id'
             }
         },
