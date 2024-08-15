@@ -3,5 +3,25 @@
     "name": "Ash Ketchum",
     "email": "ash@pokemon.com",
     "password": "password123"
+  },
+  {
+    "name": "Misty Williams",
+    "email": "Misty@pokemon.com",
+    "password": "password123"
+  },
+  {
+    "name": "Brock Harrison",
+    "email": "Brock@pokemon.com",
+    "password": "password123"
+  },
+  {
+    "name": "Jesse",
+    "email": "Jesse@pokemon.com",
+    "password": "password123"
+  },
+  {
+    "name": "James",
+    "email": "James@pokemon.com",
+    "password": "password123"
   }
 ]

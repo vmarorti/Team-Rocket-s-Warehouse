@@ -33,8 +33,9 @@ ForTrade.init(
         },
         buyer: {
             type: DataTypes.INTEGER,
+            allowNull: true,          //allowNull
             references: {
-                model: 'buyer',
+                model: 'collector',
                 key: 'id'
             }
         }

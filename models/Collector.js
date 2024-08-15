@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Buyer extends Model {};
+class Collector extends Model {};
 
-Buyer.init(
+Collector.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -23,8 +23,8 @@ Buyer.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'buyer',
+    modelName: 'collector',
     }
 )
 
-module.exports = Buyer;
+module.exports = Collector;

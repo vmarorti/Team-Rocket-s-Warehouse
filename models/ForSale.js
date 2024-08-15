@@ -18,9 +18,9 @@ ForSale.init(
                 key: 'id'
             }
         },
-        sold: {
-            type: DataTypes.BOOLEAN
-        },
+        // sold: {                         //Get rid of sold
+        //     type: DataTypes.BOOLEAN
+        // },
         item_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -30,8 +30,9 @@ ForSale.init(
         },
         buyer: {
             type: DataTypes.INTEGER,
+            allowNull: false, // allow null
             references: {
-                model: 'buyer',
+                model: 'collector',
                 key: 'id'
             }
         }

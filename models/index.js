@@ -1,5 +1,5 @@
 const User = require('./User');
-const Buyer = require('./Buyer');
+const Collector = require('./Collector');
 const ForSale = require('./ForSale');
 const ForTrade = require('./Fortrade');
 const Posts = require('./Posts.js');
@@ -39,7 +39,7 @@ Buyer.hasOne(ForTrade, {
     foreignKey: 'buyer'
 })
 
-ForTrade.belongsTo(Buyer, {
+ForTrade.belongsTo(Collector, {
     foreignKey: 'buyer'
 })
 
@@ -93,4 +93,4 @@ ForSale.belongsTo(Posts, {
 // ForSale Relationships
 // No relation towards PK
 
-module.exports = { User, Buyer, ForSale, ForTrade, Posts, Trade, Trader };
+module.exports = { User, Collector, ForSale, ForTrade, Posts, Trade };
