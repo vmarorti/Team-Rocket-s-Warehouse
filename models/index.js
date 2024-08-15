@@ -26,16 +26,16 @@ ForSale.belongsTo(User, {
     foreignKey: 'seller_id'
 })
 
-User.hasOne(Buyer, {
+User.hasOne(Collector, {
     foreignKey: 'buyer_id'
 })
 
-Buyer.belongsTo(User, {
+Collector.belongsTo(User, {
     foreignKey: 'buyer_id'
 })
 
-//Buyers Relationships
-Buyer.hasOne(ForTrade, {
+//Collectors Relationships
+Collector.hasOne(ForTrade, {
     foreignKey: 'buyer'
 })
 
