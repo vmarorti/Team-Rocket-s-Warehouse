@@ -22,10 +22,10 @@ Posts.init(
         },
         likes: {
             type: DataTypes.INTEGER
-        },
-        created_at: {
-            type: DataTypes.DATE
         }
+        // created_at: {             // Delete created_at
+        //     type: DataTypes.DATE
+        // }
     },
     { 
         sequelize,

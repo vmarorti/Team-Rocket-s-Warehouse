@@ -1,0 +1,32 @@
+[
+    {
+        "pokemon": "Blastoise",
+        "price": 10.00,
+        "condition": "Great",
+        "likes": 4
+    },
+    {
+        "pokemon": "Charizard",
+        "price": 20.00,
+        "condition": "Perfect",
+        "likes": 50
+    },
+    {
+        "pokemon": "Venusaur",
+        "price": 8.00,
+        "condition": "Good",
+        "likes": 9
+    },
+    {
+        "pokemon": "Meowth",
+        "price": 12.00,
+        "condition": "Poor",
+        "likes": 2
+    },
+    {
+        "pokemon": "Wobbuffet",
+        "price": 16.00,
+        "condition": "Great",
+        "likes": 13
+    }
+]

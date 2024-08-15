@@ -1,0 +1,33 @@
+[
+    {
+        "seller_id": 1,
+        "trade": true,
+        "fortrade_id": 1,
+        "buyer": null
+    },
+    {
+        "seller_id": 2,
+        "trade": true,
+        "fortrade_id": 2,
+        "buyer": null
+    },
+    {
+        "seller_id": 3,
+        "trade": true,
+        "fortrade_id": 3,
+        "buyer": null
+    },
+    {
+        "seller_id": 4,
+        "trade": true,
+        "fortrade_id": 4,
+        "buyer": null
+    },
+    {
+        "seller_id": 5,
+        "trade": true,
+        "fortrade_id": 5,
+        "buyer": null
+    }
+
+]
