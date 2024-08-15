@@ -30,7 +30,7 @@ ForSale.init(
         },
         buyer: {
             type: DataTypes.INTEGER,
-            allowNull: false, // allow null
+            allowNull: true, // allow null
             references: {
                 model: 'collector',
                 key: 'id'
