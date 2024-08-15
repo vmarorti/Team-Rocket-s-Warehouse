@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const {FortTade, ForSale, Trade, Posts} = require('../models');
 
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
