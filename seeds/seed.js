@@ -1,11 +1,11 @@
 const sequelize = require('../config/connection');
-const {ForSale,ForTrade, Posts, TradeCard, User } = require('../models');
+const {ForSale,ForTrade, Posts, User } = require('../models');
 
 const userData = require('./userData.json');
 const forSaleData = require('./forsaleData.json');
 const forTradeData = require('./fortradeData.json');
 const postsData = require('./postsData.json');
-const tradeData = require('./tradeData.json');
+// const tradeData = require('./tradeData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -17,7 +17,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await TradeCard.bulkCreate(tradeData);
+  // await TradeCard.bulkCreate(tradeData);
 
   await ForTrade.bulkCreate(forTradeData);
 

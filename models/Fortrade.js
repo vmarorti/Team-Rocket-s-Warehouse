@@ -21,16 +21,16 @@ ForTrade.init(
         trade: {
             type: DataTypes.BOOLEAN,
         },
-        fortrade_id: {
+        card_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'tradecard',
+                model: 'posts',
                 key: 'id'
             }
         },
-        trade_pokemon: {
-            type: DataTypes.STRING,
-        },
+        // trade_pokemon: {                 not really sure why this was here but will change back if needed
+        //     type: DataTypes.STRING,
+        // },
         buyer: {
             type: DataTypes.INTEGER,
             allowNull: true,          //allowNull
