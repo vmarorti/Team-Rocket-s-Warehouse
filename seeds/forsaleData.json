@@ -1,0 +1,27 @@
+[
+    {
+        "seller_id": 1, 
+        "item_id": 1,
+        "buyer": null
+    },
+    {
+        "seller_id": 2, 
+        "item_id": 2,
+        "buyer": null
+    },
+    {
+        "seller_id": 3, 
+        "item_id": 3,
+        "buyer": null
+    },
+    {
+        "seller_id": 4, 
+        "item_id": 4,
+        "buyer": null
+    },
+    {
+        "seller_id": 5, 
+        "item_id": 5,
+        "buyer": null
+    }
+]
