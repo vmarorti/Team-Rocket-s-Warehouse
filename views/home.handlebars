@@ -1,16 +1,17 @@
 {{> header}}
 
-<section class="card-grid">
-  {{#each cards}}
-    {{> pokemon-card 
-      imageUrl=this.imageUrl
-      name=this.pokemon
-      type=this.type
-      hp=this.hp
-      condition=this.condition
-      price=this.price
-    }}
-  {{/each}}
+<section class="card-collection">
+  <h2>Pokémon Card Collection</h2>
+  <div class="grid-container">
+    {{#each posts}}
+    <div class="card">
+      <img src="{{this.image}}" alt="{{this.name}}">
+      <h3>{{this.name}}</h3>
+      <p>Type: {{this.type}}</p>
+      <p>HP: {{this.hp}}</p>
+    </div>
+    {{/each}}
+  </div>
 </section>
 
 {{> footer}}
