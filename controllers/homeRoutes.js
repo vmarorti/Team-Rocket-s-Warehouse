@@ -35,18 +35,4 @@ router.get('/', async (req, res) => {
   }
 });
 
-// ADDITIONAL ROUTES FOR PROFILE, ABOUT, FAQ
-
-router.get('/profile', (req, res) => {
-  res.render('profile', { title: 'Your Profile' });
-});
-
-router.get('/about', (req, res) => {
-  res.render('about', { title: 'About Us' });
-});
-
-router.get('/faq', (req, res) => {
-  res.render('faq', { title: 'FAQ' });
-});
-
 module.exports = router;
