@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     // join fortrade, trade and post where fortrade.buyer is null
     const forTradeCards = await User.findAll({
       attributes:{ exclude: [ 'password', 'email','id']},
-      include: [{
+      include: [{where: {buyer:null},
         model: ForTrade, include:[{model: Posts}]
       }],raw: true,
 
@@ -17,11 +17,12 @@ router.get('/', async (req, res) => {
     // join forsale and posts where forsale.buyer is null
     const forSaleCards = await User.findAll({
       attributes:{ exclude: [ 'password', 'email','id']},
-      include: [{
+      include: [{where: {buyer:null},
         model: ForSale, include:[{model: Posts}]
       }],raw: true,
 
     })
+    console.log(forTradeCards);
     // Render the home page with the data
     res.render('home', {
       title: 'Home',
