@@ -65,7 +65,31 @@ button {
   color: #fff;
 }
 
-.grid-container {
+/* New Styles for Profile Page */
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+.card-collection-container h3 {
+  margin-bottom: 20px;
+}
+
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
@@ -77,6 +101,7 @@ button {
   padding: 16px;
   text-align: center;
   background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -88,4 +113,108 @@ button {
 .card h3 {
   margin: 10px 0;
   font-size: 1.2em;
+}
+
+.card-details {
+  padding: 10px 0;
+}
+
+.card-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.card-actions button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pokemon-card-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .pokemon-card-img {
+    max-width: 100%;
+  }
+}
+
+/* Header and Navbar Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around; /* Distributes space evenly around each link */
+  flex-grow: 1; /* Allows the nav items to grow and take up available space */
+}
+
+.nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px; /* Adjust padding for better spacing */
+  font-size: 16px;
+}
+
+.nav a:hover {
+  background-color: #e7e7e7;
+  border-radius: 4px;
+}
+
+.login-signup-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.login-signup-btn:hover {
+  background-color: #0056b3;
 }

@@ -1,9 +1,39 @@
 {{> header}}
 
-<section>
-  <h2>Your Profile</h2>
-  <p>Username: {{username}}</p>
-  <p>Email: {{email}}</p>
+<section class="profile-container">
+  <div class="profile-header">
+    <h2>Your Profile</h2>
+    <div class="profile-info">
+      <p><strong>Username:</strong> {{username}}</p>
+      <p><strong>Email:</strong> {{email}}</p>
+    </div>
+  </div>
+
+  <div class="card-collection-container">
+    <h3>Your Pokémon Card Collection</h3>
+    {{#if cardCollection.length}}
+      <div class="card-grid">
+        {{#each cardCollection}}
+          <div class="card">
+            <img src="{{this.imageUrl}}" alt="{{this.name}}" class="card-img">
+            <div class="card-details">
+              <h4>{{this.name}}</h4>
+              <p><strong>Type:</strong> {{this.type}}</p>
+              <p><strong>HP:</strong> {{this.hp}}</p>
+              <p><strong>Condition:</strong> {{this.condition}}</p>
+              <p><strong>Price:</strong> ${{this.price}}</p>
+            </div>
+            <div class="card-actions">
+              <button class="trade-button">Trade</button>
+              <button class="sell-button">Sell</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p>You have not added any cards to your collection yet.</p>
+    {{/if}}
+  </div>
 </section>
 
 {{> footer}}
