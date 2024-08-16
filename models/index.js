@@ -3,7 +3,7 @@ const Collector = require('./Collector');
 const ForSale = require('./ForSale');
 const ForTrade = require('./Fortrade');
 const Posts = require('./Posts.js');
-const TradeCard = require('./TradeCard.js'); //was Trade
+// const TradeCard = require('./TradeCard.js'); //was Trade got rid of
 // const Trader = require('./Trader.js');
 
 // Work on relationships
@@ -43,17 +43,17 @@ ForTrade.belongsTo(Collector, {
     foreignKey: 'buyer'
 })
 
-//Fortrade Relationships
+//Fortrade Relationships 
 // No relation towards PK
 
-// Trade Relationships
-TradeCard.hasOne(ForTrade, {
-    foreignKey: 'fortrade_id'
-})
+// // Trade Relationships
+// TradeCard.hasOne(ForTrade, {
+//     foreignKey: 'fortrade_id'
+// })
 
-ForTrade.belongsTo(TradeCard, {
-    foreignKey: 'fortrade_id'
-})
+// ForTrade.belongsTo(TradeCard, {
+//     foreignKey: 'fortrade_id'
+// })
 
 // Trader Relationships
 
@@ -66,11 +66,11 @@ ForTrade.belongsTo(TradeCard, {
 // })
 
 // Posts Realtionships
-Posts.hasOne(TradeCard, {
+Posts.hasOne(ForTrade, {
     foreignKey: 'card_id'
 })
 
-TradeCard.belongsTo(Posts, {
+ForTrade.belongsTo(Posts, {
     foreignKey: 'card_id'
 })
 
@@ -87,10 +87,10 @@ Posts.hasOne(ForSale, {
 })
 
 ForSale.belongsTo(Posts, {
-    foreignKey: 'Item_id'
+    foreignKey: 'item_id'
 })
 
 // ForSale Relationships
 // No relation towards PK
 
-module.exports = { User, Collector, ForSale, ForTrade, Posts, TradeCard };
+module.exports = { User, Collector, ForSale, ForTrade, Posts };

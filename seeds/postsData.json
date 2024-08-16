@@ -28,5 +28,35 @@
         "price": 16.00,
         "condition": "Great",
         "likes": 13
+    },
+    {
+        "pokemon": "Gible",
+        "price": 400.00,
+        "condition": "Perfect",
+        "likes": 20
+    },
+    {
+        "pokemon": "Mudkip",
+        "price": 600.00,
+        "condition": "Perfect",
+        "likes": 50
+    },
+    {
+        "pokemon": "Shelgon",
+        "price": 100.00,
+        "condition": "Good",
+        "likes": 40
+    },
+    {
+        "pokemon": "Lapras",
+        "price": 90.00,
+        "condition": "Poor",
+        "likes": 2
+    },
+    {
+        "pokemon": "Shedinja",
+        "price": 45.00,
+        "condition": "Great",
+        "likes": 13
     }
 ]

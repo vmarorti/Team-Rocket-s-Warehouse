@@ -1,5 +1,6 @@
 {{> header}}
 
+<<<<<<< HEAD
 <section class="card-collection">
   <h2>Pokémon Card Collection</h2>
   <div class="grid-container">
@@ -10,6 +11,17 @@
       <p>Type: {{this.type}}</p>
       <p>HP: {{this.hp}}</p>
     </div>
+=======
+<section>
+  <h2>Welcome to the Pokémon Card Collection</h2>
+  <div class="grid">
+    {{#each forTradeCards}}
+      <div class="card">
+        <img src="{{this.images.small}}" alt="{{this.name}}">
+        <h3>{{this.name}}</h3>
+        <p>{{this.set.name}}</p>
+      </div>
+>>>>>>> 574d1b13e8673748b8d9a8660d482619b440b50b
     {{/each}}
   </div>
 </section>
