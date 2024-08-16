@@ -35,23 +35,52 @@ router.get('/', async (req, res) => {
   }
 });
 
-// ADDITIONAL ROUTES FOR PROFILE, ABOUT, FAQ
+// CONOR - ADDITIONAL ROUTES FOR PROFILE, ABOUT, FAQ, LOGIN
 
-router.get('/profile', (req, res) => {
-  res.render('profile', { title: 'Your Profile' });
+// Authentication middleware
+function withAuth(req, res, next) {
+  if (!req.session.user_id) {
+    return res.redirect('/login');
+  }
+  next();
+}
+
+// Profile route
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user_id, {
+      include: [{ model: Posts }],
+    });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    res.render('profile', {
+      title: 'Your Profile',
+      username: user.name,
+      email: user.email,
+      cardCollection: user.Posts,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
 });
 
+// Login route
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'Login' });
+});
+
+// About route
 router.get('/about', (req, res) => {
   res.render('about', { title: 'About Us' });
 });
 
+// FAQ route
 router.get('/faq', (req, res) => {
   res.render('faq', { title: 'FAQ' });
 });
-
-router.get('/pokemon-card', (req, res) => { // ADDED ROUTE FOR POKEMON CARD
-  res.render('pokemon-card', { title: 'Pokemon Card' }); // ADDED RENDER METHOD FOR POKEMON CARD PAGE
-});
-
 
 module.exports = router;
