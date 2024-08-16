@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const { raw } = require('express');
+const { Sequelize } = require('sequelize');
 const {User, ForTrade, ForSale, Posts} = require('../models');
-const { associations, hasMany } = require('../models/User');
 
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
@@ -16,13 +15,14 @@ router.get('/', async (req, res) => {
     })
     // join forsale and posts where forsale.buyer is null
     const forSaleCards = await User.findAll({
-      attributes:{ exclude: [ 'password', 'email','id']},
+      attributes:{exclude: [ 'password', 'email','id']},
       include: [{where: {buyer:null},
         model: ForSale, include:[{model: Posts}]
       }],raw: true,
 
     })
     console.log(forTradeCards);
+    console.log(forSaleCards);
     // Render the home page with the data
     res.render('home', {
       title: 'Home',
