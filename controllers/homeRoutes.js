@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Sequelize } = require('sequelize');
 const {User, ForTrade, ForSale, Posts} = require('../models');
+const withAuth = require('../utils/auth');
 
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
@@ -38,29 +38,15 @@ router.get('/', async (req, res) => {
 // CONOR - ADDITIONAL ROUTES FOR PROFILE, ABOUT, FAQ, LOGIN
 
 // Authentication middleware
-function withAuth(req, res, next) {
-  if (!req.session.user_id) {
-    return res.redirect('/login');
-  }
-  next();
-}
+
 
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user_id, {
-      include: [{ model: Posts }],
-    });
-
-    if (!user) {
-      return res.status(404).send('User not found');
-    }
+    console.log(req.session.user_id);
 
     res.render('profile', {
       title: 'Your Profile',
-      username: user.name,
-      email: user.email,
-      cardCollection: user.Posts,
     });
   } catch (err) {
     console.error(err);
