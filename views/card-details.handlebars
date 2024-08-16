@@ -1,10 +1,15 @@
-{{> header}}
-
-<section>
-  <h2>{{name}} Details</h2>
-  <img src="{{images.large}}" alt="{{name}}">
-  <p>Set: {{set.name}}</p>
-  <p>Rarity: {{rarity}}</p>
-</section>
-
-{{> footer}}
+<div class="pokemon-card-container">
+  <div class="pokemon-card-image">
+    <img src="{{imageUrl}}" alt="{{name}}" class="pokemon-card-img">
+  </div>
+  <div class="pokemon-card-details">
+    <h3>{{name}}</h3>
+    <p>Type: {{type}}</p>
+    <p>HP: {{hp}}</p>
+    <p>Condition: {{condition}}</p>
+    <p>Price: ${{price}}</p>
+    <button class="trade-button">Trade</button>
+    <button class="buy-button">Buy</button>
+    <button class="add-to-collection-button">Add to Collection</button>
+  </div>
+</div>
