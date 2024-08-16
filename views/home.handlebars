@@ -4,11 +4,10 @@
   <h2>Team Rocket's Warehouse Collection</h2>
   <div class="grid">
     {{#each forTradeCards}}
-      <div class="card">
-        <img src="{{this.images.small}}" alt="{{this.name}}">
-        <h3>{{this.name}}</h3>
-        <p>{{this.set.name}}</p>
-      </div>
+      {{> pokemon-card}}
+    {{/each}}
+    {{#each forSaleCards}}
+      {{> pokemon-card  parameter=1}}
     {{/each}}
   </div>
 </section>
