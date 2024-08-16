@@ -75,7 +75,17 @@ router.get('/login', (req, res) => {
 
 // About route
 router.get('/about', (req, res) => {
-  res.render('about', { title: 'About Us' });
+  const team = [
+    { name: 'Alejandro Meza', role: 'Lead Developer' },
+    { name: 'Christopher Romero', role: 'Lead Developer' },
+    { name: 'Mariana Ortiz', role: 'UI/UX Lead Design' },
+    { name: 'Conor Lee', role: 'Project Manager & Full Stack Developer' },
+  ];
+
+  res.render('about', {
+    title: 'About Us',
+    team: team,
+  });
 });
 
 // FAQ route
