@@ -41,7 +41,6 @@ router.get('/', async (req, res) => {
 
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
-  console.log(req.session.user_id);
   try {
     let length = false;
     let forTradeCards;
@@ -64,8 +63,6 @@ router.get('/profile', withAuth, async (req, res) => {
 
       })
 
-      console.log(forTradeCards);
-      console.log(forSaleCards);
 
       if(forTradeCards.length + forSaleCards.length > 0){
         length = true;
