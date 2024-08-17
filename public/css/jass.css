@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+feature/defineRoutes
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -250,4 +251,12 @@ button {
 .team-member p {
   font-size: 1em;
   color: #666;
+  background-image: url(Background-wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
 }
