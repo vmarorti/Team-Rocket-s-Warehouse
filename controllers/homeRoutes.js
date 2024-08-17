@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const {User, ForTrade, ForSale, Posts} = require('../models');
 const withAuth = require('../utils/auth');
+const {User, ForTrade, ForSale, Posts} = require('../models');
 
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
@@ -37,17 +37,13 @@ router.get('/', async (req, res) => {
 
 // CONOR - ADDITIONAL ROUTES FOR PROFILE, ABOUT, FAQ, LOGIN
 
-// Authentication middleware
-
 
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
+  console.log(req.session.userid)
   try {
-    console.log(req.session.user_id);
-
-    res.render('profile', {
-      title: 'Your Profile',
-    });
+    res.status(200).render('profile'
+    );
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
