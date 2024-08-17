@@ -1,0 +1,15 @@
+<div class="pokemon-card-container">
+  <div class="pokemon-card-image">
+    {{#if parameter}}
+      <img src="{{'forsales.post.pokemon_image'}}" alt="{{name}}" class="pokemon-card-img">
+    {{else}}
+      <img src="{{'fortrades.post.pokemon_image'}}" alt="{{name}}" class="pokemon-card-img">
+    {{/if}}
+    
+  </div>
+  <div class="pokemon-card-details">
+    <h3>{{'forsales.post.pokemon'}}</h3>
+    <p>Condition: {{condition}}</p>
+    <p>Acquired from: {{name}}</p>
+  </div>
+</div>
