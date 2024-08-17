@@ -14,6 +14,10 @@ Posts.init(
         pokemon: {
             type: DataTypes.STRING
         },
+        pokemon_image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         price: {
             type: DataTypes.FLOAT
         },
