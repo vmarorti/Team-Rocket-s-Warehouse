@@ -23,9 +23,12 @@ router.post('/', async (req,res) => {
         console.log(newUser);
         req.session.save( () => {
             req.session.loggedIn = true;
-            // req.session.userName = response.dataValues.username;
-            // req.session.userId = response.dataValues.id;
-            res.status(200).json(newUser);
+            req.session.name = newUser.dataValues.name;
+            req.session.user_id = newUser.dataValues.id;
+            res.status(200).json(newUser, {"message": "Welcome New User"});
+            // console.log(req.session.loggedIn);
+            // console.log(req.session.name);
+            // console.log(req.session.user_id);
         });
     }catch(err){
         res.status(500).json(err);
@@ -41,18 +44,21 @@ router.post('/login', async (req,res) => {
                 email: req.body.email
             }
         });
-        if(!user){
-            res.status(400).json({'message': 'username or password invalid'});
-            return;
-        }
+        // if(!user){
+        //     res.status(400).json({'message': 'username or password invalid'});
+        //     return;
+        // }
         if(!user.checkPassword(req.body.password)){
             res.status(400).json({'message': 'username or password invalid'});
             return;
         }
         req.session.save( () => {
             req.session.loggedIn = true;
-            req.session.userName = user.dataValues.username;
-            req.session.userId = user.dataValues.id;
+            req.session.name = user.dataValues.name;
+            req.session.user_id = user.dataValues.id;
+            // console.log(req.session.loggedIn);
+            // console.log(req.session.name);
+            // console.log(req.session.user_id);
             res.status(200).json({message: 'Welcome back!'});
         });
     }catch(err){
