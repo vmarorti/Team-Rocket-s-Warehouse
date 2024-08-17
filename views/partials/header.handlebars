@@ -3,12 +3,13 @@
     <h1>Team Rocket's Warehouse</h1>
   </div>
   <nav class="nav">
-    <a href="/">Home</a>
+    <a href="/">
+      <span class="home-text">Home</span>
+      <img src="/images/Pokeball.png" alt="Pokéball" class="home-pokeball">
+    </a>
     {{#if loggedIn}}
     <a href="/profile">Profile</a>
     {{/if}}
-    <a href="/about">About</a>
-    <a href="/faq">FAQ</a>
   </nav>
   <div class="nav">
     {{#if loggedIn}}
@@ -19,6 +20,6 @@
   </div>
 </header>
 
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}

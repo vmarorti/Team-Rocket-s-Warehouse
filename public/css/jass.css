@@ -24,3 +24,23 @@ h2 {
   color: rgba(255, 255, 0, 0.777);
   text-align: center;
 }
+
+
+.home-pokeball {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  position: relative;
+}
+.home-text {
+  font-size: 18px;
+  color: rgba(255, 255, 0, 0.777);
+  margin-right: 10px;
+  text-align: center;
+  position: relative;
+  top: 20px;
+
+}
+a {
+  text-decoration: none;
+}
