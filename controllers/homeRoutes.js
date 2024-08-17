@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
     console.log(forSaleCards);
     // Render the home page with the data
     res.render('home', {
+      loggedIn: req.session.loggedIn,
       title: 'Home',
       forTradeCards,// Pass the data to the template
       forSaleCards
@@ -58,7 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       title: 'Your Profile',
-      username: user.name,
+      name: user.name,
       email: user.email,
       cardCollection: user.Posts,
     });
