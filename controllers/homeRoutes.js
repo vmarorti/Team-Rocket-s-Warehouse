@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const {User, ForTrade, ForSale, Posts} = require('../models');
+const {User, ForTrade, ForSale, Posts, Collector} = require('../models');
 
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
@@ -41,21 +41,41 @@ router.get('/', async (req, res) => {
 
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
-  console.log(req.session.userid)
+  console.log(req.session.user_id);
   try {
-    const user = await User.findByPk(req.session.user_id, {
-      include: [{ model: Posts }],
-    });
+    let length = false;
+    let forTradeCards;
+    let forSaleCards;
+    const buyer = await Collector.findOne({where: {buyer_id: req.session.user_id}});
+    if(buyer){
+      forTradeCards = await User.findAll({
+        attributes:{ exclude: [ 'password', 'email','id']},
+        include: [{where: {buyer: buyer.dataValues.id},
+          model: ForTrade, include:[{model: Posts}]
+        }],raw: true,
 
-    if (!user) {
-      return res.status(404).send('User not found');
+      })
+      // join forsale and posts where forsale.buyer is null
+      forSaleCards = await User.findAll({
+        attributes:{exclude: [ 'password', 'email','id']},
+        include: [{where: {buyer: req.session.user_id},
+          model: ForSale, include:[{model: Posts}]
+        }],raw: true,
+
+      })
+
+      console.log(forTradeCards);
+      console.log(forSaleCards);
+
+      if(forTradeCards.length + forSaleCards.length > 0){
+        length = true;
+      }
     }
-
     res.render('profile', {
       title: 'Your Profile',
-      name: user.name,
-      email: user.email,
-      cardCollection: user.Posts,
+      forTradeCards,
+      forSaleCards,
+      length
     });
   } catch (err) {
     console.error(err);
