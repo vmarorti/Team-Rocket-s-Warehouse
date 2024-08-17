@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
     console.log(forSaleCards);
     // Render the home page with the data
     res.render('home', {
+      loggedIn: req.session.loggedIn,
       title: 'Home',
       forTradeCards,// Pass the data to the template
       forSaleCards
@@ -42,8 +43,20 @@ router.get('/', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   console.log(req.session.userid)
   try {
-    res.status(200).render('profile'
-    );
+    const user = await User.findByPk(req.session.user_id, {
+      include: [{ model: Posts }],
+    });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    res.render('profile', {
+      title: 'Your Profile',
+      name: user.name,
+      email: user.email,
+      cardCollection: user.Posts,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
