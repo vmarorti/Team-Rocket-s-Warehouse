@@ -4,11 +4,21 @@
   </div>
   <nav class="nav">
     <a href="/">Home</a>
+    {{#if loggedIn}}
     <a href="/profile">Profile</a>
+    {{/if}}
     <a href="/about">About</a>
     <a href="/faq">FAQ</a>
   </nav>
   <div class="nav">
+    {{#if loggedIn}}
+    <a href="/" class="btn-logout" id="logout">logout</a>
+    {{else}}
     <a href="/login" class="btn login-signup-btn">Login or Signup</a>
+    {{/if}}
   </div>
 </header>
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
