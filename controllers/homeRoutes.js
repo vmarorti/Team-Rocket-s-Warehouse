@@ -42,37 +42,73 @@ router.get('/', async (req, res) => {
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    let length = false;
+    //carda
+    let length1 = false;
+    let length2 = false;
+    let length3 = false;
     let forTradeCards;
     let forSaleCards;
+    let myPendingTrades;
+    //all cards with approved trade or have been bought
     const buyer = await Collector.findOne({where: {buyer_id: req.session.user_id}});
     if(buyer){
       forTradeCards = await User.findAll({
         attributes:{ exclude: [ 'password', 'email','id']},
-        include: [{where: {buyer: buyer.dataValues.id},
+        include: [{where: {buyer: buyer.dataValues.id, trade: true},
           model: ForTrade, include:[{model: Posts}]
         }],raw: true,
 
       })
-      // join forsale and posts where forsale.buyer is null
       forSaleCards = await User.findAll({
         attributes:{exclude: [ 'password', 'email','id']},
-        include: [{where: {buyer: req.session.user_id},
+        include: [{where: {buyer: buyer.dataValues.id},
           model: ForSale, include:[{model: Posts}]
         }],raw: true,
 
       })
 
+      //all cards that you have sent an offer for trade
+     myPendingTrades = await User.findAll({
+      attributes:{ exclude: [ 'password', 'email','id']},
+      include: [{where: {buyer: buyer.dataValues.id},
+        model: ForTrade, include:[{model: Posts}]
+      }],raw: true,
+
+    })
+
 
       if(forTradeCards.length + forSaleCards.length > 0){
-        length = true;
+        length1 = true;
+      }
+      
+      if(myPendingTrades.length > 0){
+        length2 = true;
       }
     }
+    //all card that user has up for trade
+    const upForTrade = await User.findAll({
+      attributes:{ exclude: [ 'password', 'email','id']},
+      include: [{where: {seller_id: req.session.user_id},
+        model: ForTrade, include:[{model: Posts}]
+      }],raw: true,
+
+    })
+
+    if(upForTrade.length > 0){
+      length3 = true;
+    }
+    console.log(myPendingTrades);
+    console.log(upForTrade);
+
     res.render('profile', {
       title: 'Your Profile',
       forTradeCards,
       forSaleCards,
-      length
+      length1,
+      length2,
+      length3,
+      myPendingTrades,
+      upForTrade
     });
   } catch (err) {
     console.error(err);
