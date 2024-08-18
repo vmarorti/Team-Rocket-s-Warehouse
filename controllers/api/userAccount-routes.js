@@ -25,6 +25,7 @@ router.post('/', async (req,res) => {
             req.session.loggedIn = true;
             req.session.name = newUser.dataValues.name;
             req.session.user_id = newUser.dataValues.id;
+            req.session.email = newUser.dataValues.email;
             res.status(200).json(newUser, {"message": "Welcome New User"});
             // console.log(req.session.loggedIn);
             // console.log(req.session.name);
@@ -56,6 +57,7 @@ router.post('/login', async (req,res) => {
             req.session.loggedIn = true;
             req.session.name = user.dataValues.name;
             req.session.user_id = user.dataValues.id;
+            req.session.email = user.dataValues.email;
             // console.log(req.session.loggedIn);
             // console.log(req.session.name);
             // console.log(req.session.user_id);
