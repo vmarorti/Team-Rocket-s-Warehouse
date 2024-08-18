@@ -12,12 +12,22 @@
     
   </div>
   <div class="pokemon-card-details">
+    {{#if parameter}}
+    <h3>{{name}}'s <span style="font-weight: bolder;">{{'forsales.post.pokemon'}}</span></h3>
+    {{!-- <p>Type: {{type}}</p>
+    <p>HP: {{hp}}</p> --}}
+    <p>Condition: <span class="cond">{{'forsales.post.condition'}}</span></p>
+    <p>Price: ${{'forsales.post.price'}}</p>
+    <p>Likes: <span class="likes">{{'forsales.post.likes'}}</span></p>
+    {{else}}
     <h3>{{name}}'s <span style="font-weight: bolder;">{{'fortrades.post.pokemon'}}</span></h3>
     {{!-- <p>Type: {{type}}</p>
     <p>HP: {{hp}}</p> --}}
     <p>Condition: <span class="cond">{{'fortrades.post.condition'}}</span></p>
     <p>Price: ${{'fortrades.post.price'}}</p>
-    <p>Likes: {{'fortrades.post.likes'}}</p>
+    <p>Likes: <span class="likes">{{'fortrades.post.likes'}}</span></p>
+    {{/if}}
+    
     {{#if parameter}}
       <button id="buy" class="buy-button">Buy</button>
     {{else}}
