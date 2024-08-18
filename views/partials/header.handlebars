@@ -9,15 +9,16 @@
     </a>
     {{#if loggedIn}}
     <a href="/" class="profile-text">Profile
-    <img src="/images/Masterball.png" alt="Masterball" class="profile-masterball"></a>
+      <img src="/images/Masterball.png" alt="Masterball" class="profile-masterball"></a>
     {{/if}}
   </nav>
   <div class="nav">
     {{#if loggedIn}}
-    <a href="/" class="btn-logout" id="logout">logout</a>
+    <a href="/" class="btn-logout" id="logout">Logout
+      <img src="/images/Mewtwo.png" alt="Mewtwo" class="logout-mewtwo"></a>
     {{else}}
     <a href="/login" class="btn login-signup-btn">Login or Signup
-    <img src="/images/Ultraball.png" alt="Ultraball" class="login-signup-ultraball">
+      <img src="/images/Ultraball.png" alt="Ultraball" class="login-signup-ultraball">
     </a>
     {{/if}}
   </div>

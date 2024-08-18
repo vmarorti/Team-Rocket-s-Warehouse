@@ -60,9 +60,7 @@ h2 {
 a {
   text-decoration: none;
 }
-nav {
-  float: inline-start;
-}
+
 .login-signup-btn {
   float: right;
 
@@ -130,12 +128,24 @@ section {
   margin-left: 10px;
   text-align: center;
   position: relative;
+  float: inline-end;
 }
 
-#logout {
-  font-size: 30px;
-  color: rgba(255, 255, 0, 0.777);
-  margin-left: 100px;
-  text-align: center;
+.btn-logout {
+position: absolute;
+top: 125px;
+right: 16px;
+margin-top: 10px;
+font-size: 20px;
+color: rgba(255, 255, 0, 0.777);
+margin-left: 10px;
+text-align: center;
+}
+.logout-mewtwo {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
   position: relative;
+  float: left;
+  
 }
