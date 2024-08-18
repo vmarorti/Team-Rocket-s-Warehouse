@@ -70,7 +70,7 @@ a {
   font-style: oblique;
   font-family: 'fantasy', 'copper-plate';
   color:rgb(0, 14, 14);
-  background-image: linear-gradient(yellow, red);
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(109, 109, 109));
   padding-top: 2px;
   border-radius: 1.75%;
 }
