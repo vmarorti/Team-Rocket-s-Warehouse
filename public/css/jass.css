@@ -22,7 +22,7 @@ h1 {
 h2 {
   color: rgba(250, 250, 250, 0.777);
   position:relative; 
-  margin-top:15%; 
+  margin-top:10%; 
   margin-left:revert; 
   margin-right:auto;
   font-size: 27px;
@@ -81,5 +81,40 @@ button {
   margin-bottom: 2px;
 }
 section {
-  align-content: center;
+  display:contents;
+  justify-content: space-evenly;
+}
+.about-text {
+  float: left;
+  text-align: justify;
+  font-size: 30px;
+  color: aliceblue;
+  align-items:normal;
+}
+.faq-text {
+  float:right;
+  text-align: justify;
+  font-size: 30px;
+  color:aliceblue;
+  margin-left: 2px;
+}
+.derp {
+  width: 75px;
+  height: 75px;
+  vertical-align: middle;
+  float: inline-end;
+  margin-left: 2px;
+}
+
+.teamrocket {
+  width: 75px;
+  height: 75px;
+  vertical-align: middle;
+  float: inline-start;
+
+}
+.note {
+  color:aliceblue;
+  text-align: center;
+
 }
