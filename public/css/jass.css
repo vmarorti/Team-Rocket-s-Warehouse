@@ -20,12 +20,14 @@ h1 {
   text-align: center;
 }
 h2 {
-  color: rgba(255, 140, 25, 0.777);
+  color: rgba(250, 250, 250, 0.777);
   position:relative; 
   margin-top:15%; 
   margin-left:revert; 
   margin-right:auto;
   font-size: 27px;
+  background-image: linear-gradient(black,rgb(63, 63, 76));
+
 }
 
 .home-pokeball {
@@ -40,8 +42,21 @@ h2 {
   margin-right: 10px;
   text-align: center;
   position: relative;
-
 }
+.login-signup-ultraball {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  position: relative;
+}
+.login-signup-btn {
+  font-size: 30px;
+  color: rgba(255, 255, 0, 0.777);
+  margin-left: 10px;
+  text-align: center;
+  position: relative;
+}
+
 a {
   text-decoration: none;
 }
@@ -51,13 +66,20 @@ nav {
 .login-signup-btn {
   float: right;
 
+
 }
 .pokemon-card-details {
-  text-decoration-line: underline;
   font-style: oblique;
   font-family: 'fantasy', 'copper-plate';
   color:rgb(0, 14, 14);
   background-image: linear-gradient(yellow, red);
   padding-top: 2px;
   border-radius: 1.75%;
+}
+button {
+  margin-left: 20px;
+  margin-bottom: 2px;
+}
+section {
+  align-content: center;
 }
