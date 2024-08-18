@@ -69,6 +69,9 @@ router.get('/profile', withAuth, async (req, res) => {
       }
     }
     res.render('profile', {
+      loggedIn: req.session.loggedIn,
+      name: req.session.name,
+      email: req.session.email,
       title: 'Your Profile',
       forTradeCards,
       forSaleCards,
@@ -120,6 +123,7 @@ router.get('/about', (req, res) => {
   ];
 
   res.render('about', {
+    loggedIn: req.session.loggedIn,
     title: 'About Us',
     team: team,
   });
@@ -127,7 +131,7 @@ router.get('/about', (req, res) => {
 
 // FAQ route
 router.get('/faq', (req, res) => {
-  res.render('faq', { title: 'FAQ' });
+  res.render('faq', { loggedIn: req.session.loggedIn, title: 'FAQ' });
 });
 
 module.exports = router;
