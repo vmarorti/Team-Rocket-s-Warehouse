@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const conditions = document.querySelectorAll('.cond');
   
     conditions.forEach(function(condition) {
-      console.log(condition.innerHTML);
+      //console.log(condition.innerHTML);
   
       switch(condition.innerHTML.trim()) { 
         case 'Perfect':
@@ -24,5 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log("Condition not recognized");
       }
     });
+
+    const totalLikes = document.querySelectorAll('.likes');
+
+  totalLikes.forEach(function(likeElement) {
+    let likes = parseInt(likeElement.innerHTML); 
+    if (likes >= 50) {
+      likeElement.innerHTML = `${likes} 🐦‍🔥`;
+    }else if (likes > 20) {
+      likeElement.innerHTML = `${likes} 🔥`;
+    }
+  });
 
 });

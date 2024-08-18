@@ -25,7 +25,8 @@ Posts.init(
             type: DataTypes.STRING
         },
         likes: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
         }
         // created_at: {             // Delete created_at
         //     type: DataTypes.DATE
