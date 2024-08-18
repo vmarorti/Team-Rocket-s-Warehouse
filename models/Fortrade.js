@@ -29,9 +29,10 @@ ForTrade.init(
                 key: 'id'
             }
         },
-        // trade_pokemon: {                 not really sure why this was here but will change back if needed
-        //     type: DataTypes.STRING,
-        // },
+        trade_pokemon: {                 
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         buyer: {
             type: DataTypes.INTEGER,
             allowNull: true,          //allowNull
