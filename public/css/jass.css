@@ -2,9 +2,62 @@ body {
   font-family: Arial, sans-serif;
   background-image: url(Background-wallpaper.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
+
+}
+.pokemon-card-container {
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 700px;
+  display: inline-block;
+}
+h1 {
+  text-shadow: 3.5px 3.5px rgb(21, 71, 16);
+  color: rgba(255, 255, 0, 0.777);
+  text-align: center;
+}
+h2 {
+  color: rgba(255, 140, 25, 0.777);
+  position:relative; 
+  margin-top:15%; 
+  margin-left:revert; 
+  margin-right:auto;
+  font-size: 27px;
+}
+
+.home-pokeball {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  position: relative;
+}
+.home-text {
+  font-size: 30px;
+  color: rgba(255, 255, 0, 0.777);
+  margin-right: 10px;
+  text-align: center;
+  position: relative;
+
+}
+a {
+  text-decoration: none;
+}
+nav {
+  float: inline-start;
+}
+.login-signup-btn {
+  float: right;
+
+}
+.pokemon-card-details {
+  text-decoration-line: underline;
+  font-style: oblique;
+  font-family: 'fantasy', 'copper-plate';
+  color:rgb(0, 14, 14);
+  background-image: linear-gradient(yellow, red);
+  padding-top: 2px;
+  border-radius: 1.75%;
 }

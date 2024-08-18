@@ -41,7 +41,6 @@ router.get('/', async (req, res) => {
 
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
-  console.log(req.session.user_id);
   try {
     let length = false;
     let forTradeCards;
@@ -64,8 +63,6 @@ router.get('/profile', withAuth, async (req, res) => {
 
       })
 
-      console.log(forTradeCards);
-      console.log(forSaleCards);
 
       if(forTradeCards.length + forSaleCards.length > 0){
         length = true;
@@ -86,6 +83,31 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+//single card for trading
+router.get('/card/:id', withAuth, async (req, res) => {
+  try {
+    let card = await User.findAll({
+      attributes:{ exclude: [ 'password', 'email','id']},
+      include: [{
+        model: ForTrade, include:[{model: Posts,}]
+      }],raw: true,where:{'$fortrades.post.id$': req.params.id}
+    })
+    card = card[0]
+    console.log(card);
+    res.render('trade', {
+      title: 'trade',
+      card:{
+        image: card['fortrades.post.pokemon_image'],
+        name: card.name,
+        condition: card['fortrades.post.condition'],
+        postid: card['fortrades.post.id']
+      }
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
 // Login route
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Login' });
