@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
           condition.style.color = 'Gold';
           break;
         case 'Great':
-          condition.style.color = 'Purple';
+          condition.style.color = 'Green';
           break;
         case 'Good':
           condition.style.color = 'Red';

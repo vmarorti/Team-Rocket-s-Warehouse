@@ -7,6 +7,7 @@ body {
   background-position: center;
 
 }
+
 .pokemon-card-container {
   border-radius: 8px;
   padding: 20px;
@@ -14,19 +15,21 @@ body {
   max-width: 700px;
   display: inline-block;
 }
+
 h1 {
   text-shadow: 3.5px 3.5px rgb(21, 71, 16);
   color: rgba(255, 255, 0, 0.777);
   text-align: center;
 }
+
 h2 {
   color: rgba(250, 250, 250, 0.777);
-  position:relative; 
-  margin-top:10%; 
-  margin-left:revert; 
-  margin-right:auto;
+  position: relative;
+  margin-top: 10%;
+  margin-left: revert;
+  margin-right: auto;
   font-size: 27px;
-  background-image: linear-gradient(black,rgb(63, 63, 76));
+  background-image: linear-gradient(black, rgb(63, 63, 76));
 
 }
 
@@ -36,6 +39,7 @@ h2 {
   vertical-align: middle;
   position: relative;
 }
+
 .home-text {
   font-size: 30px;
   color: rgba(255, 255, 0, 0.777);
@@ -43,59 +47,65 @@ h2 {
   text-align: center;
   position: relative;
 }
+
 .login-signup-ultraball {
   width: 50px;
   height: 50px;
   vertical-align: middle;
   position: relative;
 }
+
 .login-signup-btn {
-  font-size: 30px;
+  font-size: 20px;
   color: rgba(255, 255, 0, 0.777);
   margin-left: 10px;
   text-align: center;
-  position: relative;
+  position: absolute;
+  top: 70px;
+  right: 16px;
+  margin-top: 10px;
+  float: right;
 }
 
 a {
   text-decoration: none;
 }
 
-.login-signup-btn {
-  float: right;
-
-
-}
 .pokemon-card-details {
   font-style: oblique;
   font-family: 'fantasy', 'copper-plate';
-  color:rgb(0, 14, 14);
+  color: rgb(0, 14, 14);
   background-image: linear-gradient(rgb(255, 255, 255), rgb(109, 109, 109));
   padding-top: 2px;
   border-radius: 1.75%;
 }
+
 button {
   margin-left: 20px;
   margin-bottom: 2px;
 }
+
 section {
-  display:contents;
+  display: contents;
   justify-content: space-evenly;
 }
+
 .about-text {
   float: left;
   text-align: justify;
   font-size: 30px;
   color: aliceblue;
-  align-items:normal;
+  align-items: normal;
 }
+
 .faq-text {
-  float:right;
+  float: right;
   text-align: justify;
   font-size: 30px;
-  color:aliceblue;
+  color: aliceblue;
   margin-left: 2px;
 }
+
 .derp {
   width: 75px;
   height: 75px;
@@ -111,17 +121,20 @@ section {
   float: inline-start;
 
 }
+
 .note {
-  color:aliceblue;
+  color: aliceblue;
   text-align: center;
 
 }
+
 .profile-masterball {
   width: 50px;
   height: 50px;
   vertical-align: middle;
   position: relative;
 }
+
 .profile-text {
   font-size: 30px;
   color: rgba(255, 255, 0, 0.777);
@@ -132,20 +145,20 @@ section {
 }
 
 .btn-logout {
-position: absolute;
-top: 125px;
-right: 16px;
-margin-top: 10px;
-font-size: 20px;
-color: rgba(255, 255, 0, 0.777);
-margin-left: 10px;
-text-align: center;
+  position: absolute;
+  top: 125px;
+  right: 16px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: rgba(255, 255, 0, 0.777);
+  margin-left: 10px;
+  text-align: center;
 }
+
 .logout-mewtwo {
   width: 40px;
   height: 40px;
   vertical-align: middle;
   position: relative;
   float: left;
-  
 }
