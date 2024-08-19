@@ -1,22 +1,66 @@
 {{> header}}
 
-<link rel="stylesheet" href="/css/about.css">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/about.css"> <!-- Your custom CSS -->
+</head>
 
 <section class="about-section">
   <h2>About Us</h2>
   <div class="team-grid">
-    {{#each team}}
-      <div class="team-container">
-        <div class="team-member">
-          <h3>{{this.name}}</h3>
-          <p>{{this.role}}</p>
-          <img src="/images/sprites/{{this.sprite}}" alt="{{this.name}} Portrait" class="team-portrait">
-        </div>
-        <div class="bio-text">
-          {{this.bio}}
-        </div>
+    
+    <div class="team-container">
+      <h3>Alejandro Meza</h3>
+      <div class="role-text">
+        <p>Lead Developer</p>
       </div>
-    {{/each}}
+      <div class="team-member alejandro">
+        <img src="/images/sprites/gible.gif" alt="Alejandro Meza" class="team-portrait">
+      </div>
+      <div class="bio-text">
+        <p>Alejandro thrives on challenges, diving into projects with the energy of Gible.</p>
+      </div>
+    </div>
+
+    <div class="team-container">
+      <h3>Christopher Romero</h3>
+      <div class="role-text">
+        <p>Lead Developer</p>
+      </div>
+      <div class="team-member christopher">
+        <img src="/images/sprites/sandshrew.gif" alt="Christopher Romero" class="team-portrait">
+      </div>
+      <div class="bio-text">
+        <p>Christopher builds solid foundations, bringing Sandshrew's steadfastness to every task.</p>
+      </div>
+    </div>
+
+    <div class="team-container">
+      <h3>Mariana Ortiz</h3>
+      <div class="role-text">
+        <p>UI/UX Lead Design</p>
+      </div>
+      <div class="team-member mariana">
+        <img src="/images/sprites/cubone.gif" alt="Mariana Ortiz" class="team-portrait">
+      </div>
+      <div class="bio-text">
+        <p>Mariana designs with empathy, channeling Cubone's resilience into every user experience.</p>
+      </div>
+    </div>
+
+    <div class="team-container">
+      <h3>Conor Lee</h3>
+      <div class="role-text">
+        <p>Project Manager & Full Stack Developer</p>
+      </div>
+      <div class="team-member conor">
+        <img src="/images/sprites/hitmonlee.gif" alt="Conor Lee" class="team-portrait">
+      </div>
+      <div class="bio-text">
+        <p>Conor drives projects forward with the precision of Hitmonlee's powerful kicks.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
