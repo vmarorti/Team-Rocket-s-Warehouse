@@ -40,6 +40,24 @@ router.delete('', async (req,res) => {
         
 });
 
+// Add a like
+router.post('/like/:id', async (req, res) => {
+    const postId = req.params.id;
+    try {
+        const post = await Posts.findByPk(postId);
+        if (post) {
+            post.likes++;
+            await post.save();
+            res.json({ success: true, likes: post.likes });
+        } else {
+            res.status(404).json({ success: false, message: 'Post not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'An error occurred' });
+    }
+});
+
 
 
  
