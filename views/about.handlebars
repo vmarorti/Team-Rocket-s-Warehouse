@@ -1,16 +1,17 @@
 {{> header}}
 
-<!-- Link to the custom CSS for the About page -->
-<link rel="stylesheet" href="/public/css/about.css">
+<link rel="stylesheet" href="/css/about.css">
 
 <section class="about-section">
   <h2>About Us</h2>
   <div class="team-grid">
     {{#each team}}
-      <div class="team-member">
-        <h3>{{this.name}}</h3>
-        <p>{{this.role}}</p>
-        <img src="/images/sprites/{{this.sprite}}" alt="{{this.name}} Portrait" class="team-portrait">
+      <div class="team-container">
+        <div class="team-member">
+          <h3>{{this.name}}</h3>
+          <p>{{this.role}}</p>
+          <img src="/images/sprites/{{this.sprite}}" alt="{{this.name}} Portrait" class="team-portrait">
+        </div>
         <div class="bio-text">
           {{this.bio}}
         </div>
