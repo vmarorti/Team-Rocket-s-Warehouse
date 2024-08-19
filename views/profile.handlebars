@@ -12,73 +12,75 @@
   <div class="card-collection-container">
     <h3>Your Pokémon Card Collection</h3>
     {{#if length1}}
-      <div class="card-grid">
-        {{#each forTradeCards}}
-          {{> cardCollection}}
-        {{/each}}
-        {{#each forSaleCards}}
-          {{> cardCollection parameter=1}}
-        {{/each}}
-      </div>
+    <div class="card-grid">
+      {{#each forTradeCards}}
+      {{> cardCollection}}
+      {{/each}}
+      {{#each forSaleCards}}
+      {{> cardCollection parameter=1}}
+      {{/each}}
+    </div>
     {{else}}
-      <p>You have not added any cards to your collection yet.</p>
+    <p>You have not added any cards to your collection yet.</p>
     {{/if}}
   </div>
 
   <div class="card-offer-pending">
     <h3>Cards you have sent offers for</h3>
     {{#if length2}}
-      <div class="card-grid">
-        {{#each myPendingTrades as |post|}}
-            <div class="pokemon-card-details">
-              {{#if (tradeStatus post)}}
-                {{#if (acceptedOrdenied post)}}
-                  <p>{{name}} accepted your offer of "{{'fortrades.trade_pokemon'}}"" for: </p>
-                {{else}}
-                  <p>{{name}} denied your offer of "{{'fortrades.trade_pokemon'}}"" for: </p>
-                {{/if}}
-              {{else}}
-                <p>{{name}} has not reviewed your offer</p>
-                <p>of "{{'fortrades.trade_pokemon'}}" for:</p>
-              {{/if}}
-              <img src="{{'fortrades.post.pokemon_image'}}" alt="{{name}}" class="pokemon-card-img">
-            </div>
-        {{/each}}
+    <div class="card-grid">
+      {{#each myPendingTrades as |post|}}
+      <div class="pokemon-card-details">
+        {{#if (tradeStatus post)}}
+        {{#if (acceptedOrdenied post)}}
+        <p>{{name}} accepted your offer of "{{'fortrades.trade_pokemon'}}"" for: </p>
+        {{else}}
+        <p>{{name}} denied your offer of "{{'fortrades.trade_pokemon'}}"" for: </p>
+        {{/if}}
+        {{else}}
+        <p>{{name}} has not reviewed your offer</p>
+        <p>of "{{'fortrades.trade_pokemon'}}" for:</p>
+        {{/if}}
+        <img src="{{'fortrades.post.pokemon_image'}}" alt="{{name}}" class="pokemon-card-img">
       </div>
+      {{/each}}
+    </div>
     {{else}}
-      <p>You have not sent any offers for trade.</p>
+    <p>You have not sent any offers for trade.</p>
     {{/if}}
   </div>
 
   <div class="card-offer-pending">
     <h3>Cards you have received trade offers for</h3>
     {{#if length3}}
-      <div class="card-grid">
-        {{#each upForTrade as |post|}}
-            <div class="pokemon-card-details" data-tradeid="{{'fortrades.id'}}">
-              <img src="{{'fortrades.post.pokemon_image'}}" alt="{{name}}" class="pokemon-card-img">
-              {{#if (tradeButtons post)}}
+    <div class="card-grid">
+      {{#each upForTrade as |post|}}
+      <div class="pokemon-card-details" data-tradeid="{{'fortrades.id'}}">
+        <img src="{{'fortrades.post.pokemon_image'}}" alt="{{name}}" class="pokemon-card-img">
+        {{#if (tradeButtons post)}}
 
-                {{#if (tradeStatus post)}}
-                  {{#if (acceptedOrdenied post)}}
-                  <p>you accepted the offer of "{{'fortrades.trade_pokemon'}}"" for the card above </p>
-                {{else}}
-                  <p>you denied the offer of "{{'fortrades.trade_pokemon'}}"" for the card above </p>
-                {{/if}}
-                {{else}}
-                  <p>you have been offered a: <h5>{{'fortrades.trade_pokemon'}}</h5></p>
-                  <button id="accept">accept</button>
-                  <button id="deny">deny</button>
-                {{/if}}
-  
-              {{else}}
-                <p>no offers yet</p>
-              {{/if}}
-            </div>
-        {{/each}}
+        {{#if (tradeStatus post)}}
+        {{#if (acceptedOrdenied post)}}
+        <p>you accepted the offer of "{{'fortrades.trade_pokemon'}}"" for the card above </p>
+        {{else}}
+        <p>you denied the offer of "{{'fortrades.trade_pokemon'}}"" for the card above </p>
+        {{/if}}
+        {{else}}
+        <p>you have been offered a:
+        <h5>{{'fortrades.trade_pokemon'}}</h5>
+        </p>
+        <button id="accept">accept</button>
+        <button id="deny">deny</button>
+        {{/if}}
+
+        {{else}}
+        <p>no offers yet</p>
+        {{/if}}
       </div>
+      {{/each}}
+    </div>
     {{else}}
-      <p>You have not posted cards for trade yet.</p>
+    <p>You have not posted cards for trade yet.</p>
     {{/if}}
   </div>
 
@@ -86,14 +88,56 @@
 <div id="form"></div>
 <div id="error"></div>
 <div>
-    <div class="d-flex justify-content-center mt-3">
-        <button id="addB" type="button">Post Card</button>
-    </div>
+  <div class="d-flex justify-content-center mt-3">
+    <button id="addB" type="button">Post Card</button>
+  </div>
 </div>
 
 <script src="/js/acceptOrDeny.js"></script>
 <script src="/js/addCard.js"></script>
 
+<style>
+  .pokemon-card-details {
+    padding: 3%;
+    background-image: none;
+    font-size: 16px;
+  }
+
+  h3 {
+    color: royalblue;
+    background-color: black;
+    padding: 2%;
+    width: fit-content;
+    font-size: 25px;
+  }
+
+  p {
+    color: aliceblue;
+    background-color: black;
+    padding: 1%;
+    width: fit-content;
+    font-size: medium;
+  }
+
+  .card {
+    background-color: rgba(0, 0, 0, 0.562);
+    font-size: medium;
+    color: blueviolet;
+    border-radius: 2px;
+    padding: 3%;
+    width: 20%;
+  }
+
+  #addB {
+    color: #ff00ba;
+    background-color: black;
+    padding: .5%;
+    margin-left: 15%;
+    margin-inline: inherit;
+  }
+
+  .card-grid {
+    width: fit-content;
+  }
+</style>
 {{> footer}}
-
-
