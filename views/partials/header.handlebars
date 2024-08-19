@@ -1,24 +1,29 @@
 <header class="header">
   <div class="logo">
-    <h1>Team Rocket's Warehouse Collection</h1>
+    <h1>Team Rocket's Warehouse</h1>
   </div>
   <nav class="nav">
-    <a href="/">Home</a>
+    <a href="/">
+      <span class="home-text">Home</span>
+      <img src="/images/Pokeball.png" alt="Pokéball" class="home-pokeball">
+    </a>
     {{#if loggedIn}}
-    <a href="/profile">Profile</a>
+    <a href="/" class="profile-text">Profile
+      <img src="/images/Masterball.png" alt="Masterball" class="profile-masterball"></a>
     {{/if}}
-    <a href="/about">About</a>
-    <a href="/faq">FAQ</a>
   </nav>
   <div class="nav">
     {{#if loggedIn}}
-    <a href="/" class="btn-logout" id="logout">logout</a>
+    <a href="/" class="btn-logout" id="logout">Logout
+      <img src="/images/Mewtwo.png" alt="Mewtwo" class="logout-mewtwo"></a>
     {{else}}
-    <a href="/login" class="btn login-signup-btn">Login or Signup</a>
+    <a href="/login" class="btn login-signup-btn">Login or Signup
+      <img src="/images/Ultraball.png" alt="Ultraball" class="login-signup-ultraball">
+    </a>
     {{/if}}
   </div>
 </header>
 
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}

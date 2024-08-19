@@ -1,25 +1,32 @@
-
+const router = require('express').Router();
+const {User, ForTrade, ForSale, Posts, Collector} = require('../../models');
 
 //set trade to true or false for when user accepts or denies offer (will be null initally)
-router.put('', async (req,res) => {
-        /*join for trade,trad and posts where posts.id = req.body.id
-                                        or
-        make sure card partial had data-fortradeid and use that value to find row
-        */
-        //update row to true or false
+router.put('/status', async (req,res) => {
+        try{    
+                const acceptOrdeny = await ForTrade.update({trade: req.body.trade},
+                                                        {where: {id: req.body.tradeid}});                                     
+                res.status(200).json(acceptOrdeny);
+        }catch(err){
+                res.status(500).json(err);
+        }
         
 });
 
 //set pokemon to offer for a trade which also creates a row in buyer and updates buyer in fortrade as well
-router.put('', async (req,res) => {
-        /*join for trade,trad and posts where posts.id = req.body.id
-                                        or
-        make sure card partial had data-fortradeid and use that value to find row
-        */
-        //create row in buyer using req.session.userId
-        //set pokemon name
-        //set byer in for trade to created row id
-        
+router.put('/offer', async (req,res) => {
+
+        try{    
+                let collector = await Collector.findOne({where:{buyer_id: req.session.user_id}});
+                if(!collector){
+                        collector = await Collector.create({buyer_id: req.session.user_id})
+                }
+                const addBuyer = await ForTrade.update({trade_pokemon: req.body.pokemon, buyer: collector.dataValues.id},
+                                                        {where: {id: req.body.postid}});                                     
+                res.status(200).json(req.body);
+        }catch(err){
+                res.status(500).json(err);
+        }
 });
 
 //put card back on the market when user denies current offer and request to post again
@@ -34,3 +41,5 @@ router.put('', async (req,res) => {
         //set trade to null
         
 });
+
+module.exports = router;

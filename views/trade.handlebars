@@ -1,0 +1,21 @@
+{{> header}}
+<div class="pokemon-card-container" data-postid={{card.postid}}>
+  <div class="pokemon-card-image">
+      <img src={{card.image}} alt="{{name}}" class="pokemon-card-img">
+  </div>
+  <div class="pokemon-card-details">
+    <h3>Owner: {{card.name}}</h3>
+    <p>Type: {{type}}</p>
+    <p>HP: {{hp}}</p>
+    <p>Condition: {{card.condition}}</p>
+</div>
+<div id="form">
+  <h4>offer:</h4>
+  <input id="pokemon">
+  <button id="submit">Submit trade offer</button>
+</div>
+<div id="error"></div>
+
+<script src="/js/submitOffer.js"></script>
+
+{{> footer}}

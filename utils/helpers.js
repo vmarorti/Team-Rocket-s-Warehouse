@@ -2,8 +2,14 @@ module.exports = {
   format_date: (date) => {
     return date.toLocaleDateString();
   },
-  tradeOrsale: (id) => {
-    console.log(id)
-    return id !== undefined;
+  tradeButtons: (post) => {
+    console.log(post['fortrades.trade_pokemon'])
+    return post['fortrades.trade_pokemon'] != null;
+  },
+  tradeStatus: (post) => {
+    return post['fortrades.trade'] != null;
+  },
+  acceptedOrdenied: (post) => {
+    return post['fortrades.trade'];
   },
 };
