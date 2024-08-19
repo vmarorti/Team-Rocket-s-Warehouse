@@ -28,6 +28,7 @@ h2 {
   margin-top: 10%;
   margin-left: revert;
   margin-right: auto;
+  margin-bottom: auto;
   font-size: 27px;
   background-image: linear-gradient(black, rgb(63, 63, 76));
 
@@ -161,4 +162,25 @@ section {
   vertical-align: middle;
   position: relative;
   float: left;
+}
+.profile-header {
+  color: rgba(250, 250, 250, 0.777);
+  position: relative;
+  margin-top: 5%;
+  margin-left: revert;
+  margin-right: auto;
+  font-size: 27px;
+}
+.profile-info {
+  color: rgba(250, 250, 250, 0.777);
+  position: relative;
+  margin-left: revert;
+  margin-right: auto;
+  font-size: 20px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.682), rgba(0, 0, 0, 0));
+  border: inset;
+  border-color: rgb(82, 82, 82);
+}
+.profile-container {
+  color: rgb(250, 250, 250);
 }
