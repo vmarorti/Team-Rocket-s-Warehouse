@@ -22,7 +22,7 @@ Alejandro - Backend-legend - Database/Route/HB foundation, Route Handler, FE JS
 
 Christopher - Frontend/Backend - Route handler/Config, Configuring DB/HB, FE JS 
 
-Connor - Frontend/Backend - Route foundation, HTML & CSS 
+Conor - Frontend/Backend - Route foundation, HTML & CSS 
 
 Mariana - UI/UX - Framework, HTML and CSS Lead
 
