@@ -10,7 +10,6 @@ body {
 }
 
 /* ABOUT PAGE CSS */
-
 .about-section {
   padding: 20px 0;
   text-align: center;
@@ -18,16 +17,41 @@ body {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns with even spacing */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
-  row-gap: 40px;
+  row-gap: 60px;
   justify-items: center;
   align-items: start;
 }
 
-.team-member {
-  width: 440px; /* Doubled the original size */
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
   padding: 0;
+  color: #fff;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.role-text p {
+  margin: 0;
+  color: #fff;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  margin-top: 2px;
+  margin-bottom: -55px;
+}
+
+.team-member {
+  width: 175px; 
+  height: 300px;
   background: url('/images/gameboy-background.png') no-repeat center center;
   background-size: contain;
   border: none;
@@ -36,60 +60,75 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-}
-
-.team-member h3, .team-member p {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
-  font-size: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
 }
 
 .team-portrait {
-  width: 73px; /* Reduced size by 1/3 */
+  width: 80px;
   height: auto;
   image-rendering: pixelated;
-  margin-bottom: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.alejandro .team-portrait {
+  width: 70px;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.christopher .team-portrait {
+  width: 55px;
+  top: 26%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.mariana .team-portrait {
+  width: 65px;
+  top: 25%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+}
+
+.conor .team-portrait {
+  width: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .bio-text {
   margin-top: 20px;
-  padding: 10px;
-  font-size: 12px;
+  padding: 15px;
+  font-size: 14px;
   color: #333;
-  background-color: rgba(255, 255, 255, 0); /* Transparent background */
-  border: 2px solid #333; /* Border around the bio box */
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #fff;
   border-radius: 5px;
-  width: 90%; /* Smaller width for the bio box */
-  height: 80px; /* Smaller height for the bio box */
-  box-shadow: none;
-  text-align: left;
-  position: relative;
-  top: 20px; /* Adjusts space between Gameboy and bio box */
+  width: 220px;
+  height: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
-h3, p {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  text-decoration: none;
+.alejandro {
+  margin-top: 40px;
 }
 
-h2 {
-  margin-bottom: 20px;
+.christopher {
+  margin-top: 50px;
 }
 
-.team-member h3 {
-  font-size: 22px;
-  margin: 10px 0 5px;
-  color: #fff;
+.mariana {
+  margin-top: 60px;
 }
 
-.team-member p {
-  font-size: 16px;
-  color: #fff;
+.conor {
+  margin-top: 55px;
 }
