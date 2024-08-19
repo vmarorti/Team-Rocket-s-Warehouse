@@ -9,7 +9,7 @@
   <h2>About Us</h2>
   <div class="team-grid">
     
-    <div class="team-container">
+    <div class="team-container element-dust">
       <h3>Alejandro Meza</h3>
       <div class="role-text">
         <p>Lead Developer</p>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="team-container">
+    <div class="team-container element-dust">
       <h3>Christopher Romero</h3>
       <div class="role-text">
         <p>Lead Developer</p>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="team-container">
+    <div class="team-container element-dust">
       <h3>Mariana Ortiz</h3>
       <div class="role-text">
         <p>UI/UX Lead Design</p>
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="team-container">
+    <div class="team-container element-dust">
       <h3>Conor Lee</h3>
       <div class="role-text">
         <p>Project Manager & Full Stack Developer</p>
@@ -62,6 +62,19 @@
     </div>
 
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll('.team-container');
+
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add('element-dust');
+        }, index * 300);
+      });
+    });
+  </script>
+
 </section>
 
 {{> footer}}
