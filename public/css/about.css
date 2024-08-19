@@ -133,3 +133,41 @@ h3 {
 .conor {
   margin-top: 55px;
 }
+
+/* FAQ PAGE CSS */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border:transparent;
+  border-radius: 5px;
+  background-color:transparent;
+  width: 80%;
+  text-align: center;
+}
+
+.faq-gif {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto;
+}
+
+h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+p {
+  color: aliceblue;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
