@@ -13,16 +13,17 @@
   </div>
   <div class="pokemon-card-details">
     {{#if parameter}}
-    <h3>{{name}}'s <span style="font-weight: bolder;">{{'forsales.post.pokemon'}}</span></h3>
+    <h3>{{name}}'s <span class="nameAdj" style="font-weight: bolder;">{{'forsales.post.pokemon'}}</span></h3>
     <p>Condition: <span class="cond">{{'forsales.post.condition'}}</span></p>
     <p>Price: <span class="money">${{'forsales.post.price'}}</span></p>
     <p>Likes: <span class="likes">{{'forsales.post.likes'}}</span></p>
     {{else}}
-    <h3>{{name}}'s <span style="font-weight: bolder;">{{'fortrades.post.pokemon'}}</span></h3>
+    <h3>{{name}}'s <span class="nameAdj" style="font-weight: bolder;">{{'fortrades.post.pokemon'}}</span></h3>
     <p>Condition: <span class="cond">{{'fortrades.post.condition'}}</span></p>
     <p>Price: <span class="money">${{'fortrades.post.price'}}</span></p>
     <p>Likes: <span class="likes">{{'fortrades.post.likes'}}</span></p>
     {{/if}}
+    
     
     {{#if parameter}}
       <button id="buy" class="buy-button">Buy</button>
@@ -30,7 +31,7 @@
     <a href="/card/{{'fortrades.post.id'}}"><button class="trade-button">Trade</button></a>
       
     {{/if}}
-    <button class="add-to-collection-button">Add to Collection</button>
+    {{!-- <button class="add-to-collection-button">Add to Collection</button> --}}
 
     {{#if loggedIn}}
     {{#if parameter}}
@@ -39,5 +40,6 @@
     <button class="like-button" data-post-id={{'fortrades.post.id'}}>Like</button>
     {{/if}}
     {{/if}}
+    
   </div>
 </div>

@@ -12,6 +12,7 @@ async function sendOffer() {
             postid: idContainer.dataset.postid
         })
     });
+    document.location.replace('/');
 }
 
 submitBtn.addEventListener('click', sendOffer);
