@@ -100,6 +100,7 @@ h3 {
 .conor .team-portrait {
   width: 60px;
   left: 50%;
+  top: 71px;
   transform: translate(-50%, -50%);
 }
 
