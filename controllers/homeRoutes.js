@@ -1,33 +1,37 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const {User, ForTrade, ForSale, Posts, Collector} = require('../models');
+const { User, ForTrade, ForSale, Posts, Collector } = require('../models');
 
 // Define the root route to render the home page
 router.get('/', async (req, res) => {
   try {
-    // join fortrade, trade and post where fortrade.buyer is null
     const forTradeCards = await User.findAll({
-      attributes:{ exclude: [ 'password', 'email','id']},
-      include: [{where: {buyer:null},
-        model: ForTrade, include:[{model: Posts}]
-      }],raw: true,
+      attributes: { exclude: ['password', 'email', 'id'] },
+      include: [{
+        where: { buyer: null },
+        model: ForTrade,
+        include: [{ model: Posts }]
+      }],
+      raw: true,
+    });
 
-    })
-    // join forsale and posts where forsale.buyer is null
     const forSaleCards = await User.findAll({
-      attributes:{exclude: [ 'password', 'email','id']},
-      include: [{where: {buyer:null},
-        model: ForSale, include:[{model: Posts}]
-      }],raw: true,
+      attributes: { exclude: ['password', 'email', 'id'] },
+      include: [{
+        where: { buyer: null },
+        model: ForSale,
+        include: [{ model: Posts }]
+      }],
+      raw: true,
+    });
 
-    })
     console.log(forTradeCards);
     console.log(forSaleCards);
-    // Render the home page with the data
+
     res.render('home', {
       loggedIn: req.session.loggedIn,
       title: 'Home',
-      forTradeCards,// Pass the data to the template
+      forTradeCards, // Pass the data to the template
       forSaleCards
     });
   } catch (err) {
@@ -35,9 +39,6 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
-// CONOR - ADDITIONAL ROUTES FOR PROFILE, ABOUT, FAQ, LOGIN
-
 
 // Profile route
 router.get('/profile', withAuth, async (req, res) => {
@@ -152,11 +153,11 @@ router.get('/login', (req, res) => {
 // About route
 router.get('/about', (req, res) => {
   const team = [
-    { name: 'Alejandro Meza', role: 'Lead Developer' },
-    { name: 'Christopher Romero', role: 'Lead Developer' },
-    { name: 'Mariana Ortiz', role: 'UI/UX Lead Design' },
-    { name: 'Conor Lee', role: 'Project Manager & Full Stack Developer' },
-  ];
+    { name: 'Alejandro Meza', role: 'Lead Developer', sprite: 'gible.gif' },
+    { name: 'Christopher Romero', role: 'Lead Developer', sprite: 'sandshrew.gif' },
+    { name: 'Mariana Ortiz', role: 'UI/UX Lead Design', sprite: 'cubone.gif' },
+    { name: 'Conor Lee', role: 'Project Manager & Full Stack Developer', sprite: 'hitmonlee.gif' },
+  ];  
 
   res.render('about', {
     loggedIn: req.session.loggedIn,
