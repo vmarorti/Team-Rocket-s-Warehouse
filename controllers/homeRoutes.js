@@ -132,6 +132,7 @@ router.get('/card/:id', withAuth, async (req, res) => {
     card = card[0]
     console.log(card);
     res.render('trade', {
+      loggedIn: req.session.loggedIn,
       title: 'trade',
       card:{
         image: card['fortrades.post.pokemon_image'],
@@ -147,7 +148,7 @@ router.get('/card/:id', withAuth, async (req, res) => {
 });
 // Login route
 router.get('/login', (req, res) => {
-  res.render('login', { title: 'Login' });
+  res.render('login', { loggedIn: req.session.loggedIn, title: 'Login' });
 });
 
 // About route

@@ -1,11 +1,15 @@
 {{> header}}
 
 <section>
-  <h2>Featured Collection</h2>
+  <h2 class="feat-coll">Featured Collection</h2>
   <div class="grid">
+    <hr>
+    <h5 class="card-zone">Trading Zone</h5>
     {{#each forTradeCards}}
       {{> pokemon-card loggedIn=../loggedIn}}
     {{/each}}
+    <hr>
+    <h5 class="card-zone">Purchasable Cards</h5>
     {{#each forSaleCards}}
       {{> pokemon-card  parameter=1 loggedIn=../loggedIn}}
     {{/each}}

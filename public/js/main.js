@@ -42,9 +42,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const allMoneyEl = document.querySelectorAll('.money');
     allMoneyEl.forEach(function(money) {
       const moneyValue = parseInt(money.textContent.replace('$', ''));
-      const lightness = (moneyValue / 100) * 100;
-      money.style.color = `hsl(120, 100%, ${lightness}%)`;
-      console.log(money, moneyValue, lightness);
+      switch (true) {
+        case (moneyValue > 500):
+          money.style.color = '#0d260f';
+          break;
+        case (moneyValue > 400):
+          money.style.color = '#164219';
+          break;
+        case (moneyValue > 300):
+          money.style.color = '#1a521e';
+          break;
+        case (moneyValue > 200):
+          money.style.color = '#226e27';
+          break;
+        case (moneyValue > 100):
+          money.style.color = '#277a2d';
+          break;
+        case (moneyValue > 0):
+          money.style.color = '#2c8a32';
+          break;
+        default:
+          // You can add a default case if you want to handle other values
+          money.style.color = 'black';
+          break;
+      }
     });
 
     // Adds emoji to posts with a lot of likes
