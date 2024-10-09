@@ -15,14 +15,19 @@ router.put('/status', async (req,res) => {
 
 //set pokemon to offer for a trade which also creates a row in buyer and updates buyer in fortrade as well
 router.put('/offer', async (req,res) => {
-
+        console.log(req.body) 
         try{    
                 let collector = await Collector.findOne({where:{buyer_id: req.session.user_id}});
                 if(!collector){
                         collector = await Collector.create({buyer_id: req.session.user_id})
                 }
+                console.log(collector);
+                console.log()
+                /*const addBuyer = await ForTrade.update({trade_pokemon: req.body.pokemon, buyer: collector.dataValues.id},
+                                                        {where: {item_id: req.body.postid}});  */
                 const addBuyer = await ForTrade.update({trade_pokemon: req.body.pokemon, buyer: collector.dataValues.id},
-                                                        {where: {id: req.body.postid}});                                     
+                                                        {where: {card_id: req.body.postid}});                                      
+                console.log(addBuyer)                                  
                 res.status(200).json(req.body);
         }catch(err){
                 res.status(500).json(err);

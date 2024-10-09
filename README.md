@@ -22,7 +22,7 @@ Alejandro - Backend-legend - Database/Route/HB foundation, Route Handler, FE JS
 
 Christopher - Frontend/Backend - Route handler/Config, Configuring DB/HB, FE JS 
 
-Connor - Frontend/Backend - Route foundation, HTML & CSS 
+Conor - Frontend/Backend - Route foundation, HTML & CSS 
 
 Mariana - UI/UX - Framework, HTML and CSS Lead
 
@@ -33,7 +33,7 @@ Mariana - UI/UX - Framework, HTML and CSS Lead
 For more information about the MIT License visit [here](https://opensource.org/licenses/MIT).
 
 ## Link to Application
-(input render link)
+https://team-rocket-s-warehouse.onrender.com
 
 
 
