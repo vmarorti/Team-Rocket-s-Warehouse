@@ -1,3 +1,4 @@
+const { ssl } = require('pg/lib/defaults');
 const Sequelize = require('sequelize');
 require('dotenv').config();
 console.log(process.env.DB_NAME);
@@ -5,7 +6,16 @@ console.log(process.env.DB_NAME);
 let sequelize;
 
 if (process.env.DB_URL) {
-  sequelize = new Sequelize(process.env.DB_URL);
+  sequelize = new Sequelize(process.env.DB_URL, {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  });
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
